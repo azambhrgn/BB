@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.example.azam.bb"
+        applicationId "com.bhargain.azam.bb"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1

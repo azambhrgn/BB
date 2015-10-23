@@ -1,11 +1,107 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="wrap_content" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Spinner
+        android:id="@+id/bldgrp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/blood_arrays"
+        android:prompt="@string/blood_prompt"
+
+        android:background="@drawable/rounded_corner"
+
+        android:layout_marginTop="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/antigen"
+        android:entries="@array/antigen_arrays"
+        android:prompt="@string/antigen_prompt"
+        android:background="@drawable/rounded_corner"
+        android:spinnerMode="dropdown"
+
+        android:layout_alignBottom="@+id/city"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:background="@drawable/button_style"
+        android:id="@+id/btnsearch"
+        android:layout_below="@+id/antigen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/btnadd"
+        android:background="@drawable/button_style"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Info"
+        android:id="@+id/btninfo"
+        android:background="@drawable/button_style"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locate BB"
+        android:id="@+id/btnlocate"
+        android:background="@drawable/button_style"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/city"
+        android:entries="@array/city_arrays"
+        android:background="@drawable/rounded_corner"
+        android:layout_alignTop="@+id/bldgrp"
+        android:layout_alignRight="@+id/btninfo"
+        android:layout_alignEnd="@+id/btninfo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Powered by JavApp"
+        android:id="@+id/companytitle"
+        android:textColor="#0190c8"
+        android:layout_below="@+id/btnsearch"
+        android:layout_toLeftOf="@+id/btninfo"
+        android:layout_toStartOf="@+id/btninfo"
+        android:layout_marginTop="63dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Bhargain-One"
+        android:id="@+id/bone"
+        android:textColor="#18a228"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/bldgrp"
+        android:layout_toEndOf="@+id/bldgrp" />
+
 
 </RelativeLayout>

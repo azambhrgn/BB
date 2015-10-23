@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="New Entry"
+        android:id="@+id/tvaddentries"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="35dp"
+        android:textIsSelectable="true" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        android:ems="10"
+        android:id="@+id/etname"
+        android:background="@drawable/rounded_corner"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/tvaddentries"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Father's Name"
+        android:ems="10"
+        android:id="@+id/etfatherName"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/etname"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Mohalla"
+        android:ems="10"
+        android:id="@+id/etmohalla"
+        android:background="@drawable/rounded_corner"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/etfatherName"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:hint="Phone"
+        android:ems="10"
+        android:id="@+id/etphone"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/etmohalla"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnbld"
+        android:entries="@array/blood_arrays"
+        android:background="@drawable/rounded_corner"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/etphone"
+        android:layout_alignLeft="@+id/etphone"
+        android:layout_alignStart="@+id/etphone" />
+
+    <Spinner
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnantigen"
+        android:background="@drawable/rounded_corner"
+        android:entries="@array/antigen_arrays"
+        android:layout_alignTop="@+id/spnbld"
+        android:layout_alignRight="@+id/etphone"
+        android:layout_alignEnd="@+id/etphone" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/btnsave"
+        android:background="@drawable/button_style"
+        android:layout_below="@+id/spnbld"
+        android:layout_alignLeft="@+id/spnbld"
+        android:layout_alignStart="@+id/spnbld"
+        android:layout_marginTop="58dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btncancel"
+        android:background="@drawable/button_style"
+        android:layout_alignTop="@+id/btnsave"
+        android:layout_alignRight="@+id/spnantigen"
+        android:layout_alignEnd="@+id/spnantigen" />
+
+
+
+
+
+</RelativeLayout>
