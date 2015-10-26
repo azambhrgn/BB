@@ -107,8 +107,14 @@
         android:layout_alignRight="@+id/spnantigen"
         android:layout_alignEnd="@+id/spnantigen" />
 
-
-
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_above="@+id/btncancel"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="false"
+        android:visibility="gone"/>
 
 
 </RelativeLayout>

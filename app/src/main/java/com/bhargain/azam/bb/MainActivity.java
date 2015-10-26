@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,6 +32,7 @@ public class MainActivity extends ActionBarActivity {
         btnadd=(Button) findViewById(R.id.btnadd);
         btnsearch= (Button) findViewById(R.id.btnsearch);
         btninfo= (Button) findViewById(R.id.btninfo);
+        btnsearch.setEnabled(true);
 
         companytitle= (TextView) findViewById(R.id.companytitle);
         //companytitle.setTextColor(Color.GREEN);
@@ -68,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
                 //Toast.makeText(v.getContext(), str, Toast.LENGTH_LONG).show();
                 String status="FB";
 
-
+                btnsearch.setEnabled(false);
                 spnrbldgrp= (Spinner) findViewById(R.id.bldgrp);
                 spnrantigen= (Spinner) findViewById(R.id.antigen);
 
@@ -98,5 +100,10 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("On resume","Azam");
+        btnsearch.setEnabled(true);
+    }
 }

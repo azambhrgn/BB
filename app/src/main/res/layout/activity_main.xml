@@ -87,10 +87,9 @@
         android:text="Powered by JavApp"
         android:id="@+id/companytitle"
         android:textColor="#0190c8"
+        android:layout_marginTop="64dp"
         android:layout_below="@+id/btnsearch"
-        android:layout_toLeftOf="@+id/btninfo"
-        android:layout_toStartOf="@+id/btninfo"
-        android:layout_marginTop="63dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,8 +99,7 @@
         android:id="@+id/bone"
         android:textColor="#18a228"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/bldgrp"
-        android:layout_toEndOf="@+id/bldgrp" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

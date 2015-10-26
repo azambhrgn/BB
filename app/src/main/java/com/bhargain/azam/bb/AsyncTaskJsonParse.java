@@ -1,5 +1,7 @@
 package com.bhargain.azam.bb;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -20,6 +22,9 @@ public class AsyncTaskJsonParse extends AsyncTask<String, String, JSONObject>
     private String url = "http://bhargain.in/webservices/";
     List<NameValuePair> param=new ArrayList<NameValuePair>();
 
+    private Context context;
+    private ProgressDialog progress;
+
     String msg;
 
 
@@ -35,12 +40,13 @@ public class AsyncTaskJsonParse extends AsyncTask<String, String, JSONObject>
     JSONObject jsonobj,src;
     String str="checking";
 
-    public AsyncTaskJsonParse(String status,String uname,String pass)
+    public AsyncTaskJsonParse(Context context,String status,String uname,String pass)
     {
         //Constructor to login in
-        uname=this.uname;
-        pass=this.pass;
-        status=this.status;
+        this.uname=uname;
+        this.pass=pass;
+        this.status=status;
+        this.context=context;
 
         param.add(new BasicNameValuePair("status",status));
         param.add(new BasicNameValuePair("uname",uname));
@@ -49,7 +55,7 @@ public class AsyncTaskJsonParse extends AsyncTask<String, String, JSONObject>
     }
 
 
-    public AsyncTaskJsonParse(String status,String name,String fathername,String mohalla,String city,String phone,String bldgrp,String antigen,String insertedby)
+    public AsyncTaskJsonParse(Context context,String status,String name,String fathername,String mohalla,String city,String phone,String bldgrp,String antigen,String insertedby)
     {
         //constructor to insert in to bloodbank
 
@@ -61,7 +67,10 @@ public class AsyncTaskJsonParse extends AsyncTask<String, String, JSONObject>
         this.bldgrp=bldgrp;
         this.antigen=antigen;
         this.insertedby=insertedby;
+        this.context=context;
 
+
+       // progress=new ProgressDialog(context);
        // Log.e("Inconstructor  azam", name);
         //Log.d("Azam",name);
 
@@ -78,20 +87,51 @@ public class AsyncTaskJsonParse extends AsyncTask<String, String, JSONObject>
         url=url+"insertToBloodBank.php";
     }
 
-    public AsyncTaskJsonParse(String status,String bldgrp,String antigen,String city)
+
+
+    public AsyncTaskJsonParse(Context context,String status,String bldgrp,String antigen,String city)
     {
         this.bldgrp=bldgrp;
         this.antigen=antigen;
         this.city=city;
+        this.context=context;
+        //progress=new ProgressDialog(context);
+
         Log.e("Inconstructor  azam", bldgrp);
-        param.add(new BasicNameValuePair("status",status));
-        param.add(new BasicNameValuePair("bldgrp",bldgrp));
-        param.add(new BasicNameValuePair("antigen",antigen));
-        param.add(new BasicNameValuePair("city",city));
+        param.add(new BasicNameValuePair("status", status));
+        param.add(new BasicNameValuePair("bldgrp", bldgrp));
+        param.add(new BasicNameValuePair("antigen", antigen));
+        param.add(new BasicNameValuePair("city", city));
 
         url=url+"getFromBB.php";
 
     }
+
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        Log.e("In preexecution  azam", "Preexecution 1");
+
+        /*progress = new ProgressDialog(context,R.style.MyTheme);
+        progress.setCancelable(false);
+        progress.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
+        progress.show();*/
+
+        /*progress.setMessage("Processing...");
+        progress.setIndeterminate(true);
+
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setCancelable(true);
+        Log.e("In preexecution  azam", "Preexecution 2");
+        progress.show();*/
+        /*if(progress.isShowing())
+        {
+            Log.e("In preexecution  azam", "Showing 2");
+        }*/
+    }
+
+
 
 
     @Override
@@ -130,10 +170,13 @@ public class AsyncTaskJsonParse extends AsyncTask<String, String, JSONObject>
         // TODO Auto-generated method stub
         super.onPostExecute(result);
         //pDialog.dismiss();
-        if (msg != null)
+
+       /* if(progress.isShowing())
         {
-            //Toast.makeText(this, "hllo " + msg, Toast.LENGTH_LONG).show();
-        }
+            Log.e("In onPost  azam", "Showing 2");
+        }*/
+        //progress.dismiss();
+
 
     }
 
