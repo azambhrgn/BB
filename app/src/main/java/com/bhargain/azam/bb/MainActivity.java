@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
 
     private Button btnsearch,btnadd,btninfo;
     private DBAdapter mydb;
-    private Spinner spnrbldgrp,spnrantigen;
+    private Spinner spnrbldgrp,spnrantigen,spnrcity;
     private String city="Vadodara";
     private TextView companytitle;
 
@@ -73,9 +73,11 @@ public class MainActivity extends ActionBarActivity {
                 btnsearch.setEnabled(false);
                 spnrbldgrp= (Spinner) findViewById(R.id.bldgrp);
                 spnrantigen= (Spinner) findViewById(R.id.antigen);
+                spnrcity= (Spinner) findViewById(R.id.city);
 
                 bgrp=spnrbldgrp.getSelectedItem().toString();
                 antign=spnrantigen.getSelectedItem().toString();
+                city=spnrcity.getSelectedItem().toString();
                 if(antign.equals("-"))
                 {
                     antign="0";
@@ -90,6 +92,7 @@ public class MainActivity extends ActionBarActivity {
                 Intent intent = new Intent("com.bhargain.azam.bb.ListViewDisplay");
                 intent.putExtra("bldgrp", bgrp);
                 intent.putExtra("antigen", antign);
+                intent.putExtra("city", city);
                 startActivityForResult(intent, 100);
 
 

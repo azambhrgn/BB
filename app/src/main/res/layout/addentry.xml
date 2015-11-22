@@ -68,11 +68,24 @@
     <Spinner
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:id="@+id/spnrcity"
+        android:layout_marginTop="25dp"
+        android:entries="@array/city_arrays"
+        android:background="@drawable/rounded_corner"
+        android:layout_below="@+id/etphone"
+        android:layout_alignLeft="@+id/spnbld"
+        android:layout_alignStart="@+id/spnbld"
+        android:layout_alignRight="@+id/spnantigen"
+        android:layout_alignEnd="@+id/spnantigen" />
+
+    <Spinner
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:id="@+id/spnbld"
         android:entries="@array/blood_arrays"
         android:background="@drawable/rounded_corner"
-        android:layout_marginTop="39dp"
-        android:layout_below="@+id/etphone"
+        android:layout_below="@+id/spnrcity"
+        android:layout_marginTop="25dp"
         android:layout_alignLeft="@+id/etphone"
         android:layout_alignStart="@+id/etphone" />
 
@@ -86,6 +99,8 @@
         android:layout_alignRight="@+id/etphone"
         android:layout_alignEnd="@+id/etphone" />
 
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,7 +110,7 @@
         android:layout_below="@+id/spnbld"
         android:layout_alignLeft="@+id/spnbld"
         android:layout_alignStart="@+id/spnbld"
-        android:layout_marginTop="58dp" />
+        android:layout_marginTop="25dp" />
 
     <Button
         android:layout_width="wrap_content"

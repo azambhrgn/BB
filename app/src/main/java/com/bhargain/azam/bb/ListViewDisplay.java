@@ -37,7 +37,7 @@ public class ListViewDisplay extends ActionBarActivity {
 
     Context context;
 
-    private String bgrp, antigen;
+    private String bgrp, antigen,city;
     private DBAdapter mydb;
 
     ListView list;
@@ -66,6 +66,7 @@ public class ListViewDisplay extends ActionBarActivity {
         if (bundle != null) {
             bgrp = (String) bundle.get("bldgrp");
             antigen = (String) bundle.get("antigen");
+            city= (String) bundle.get("city");
         }
 
         String temp = null;
@@ -85,7 +86,7 @@ public class ListViewDisplay extends ActionBarActivity {
         //list.setAdapter(adapter);
 
         String status = "FB";
-        String city = "Vadodara";
+        //String city = "Vadodara";
 
         //async task executing
         //new AsyncTaskJsonParse().execute();
@@ -240,7 +241,7 @@ public class ListViewDisplay extends ActionBarActivity {
                         fathername_array[i] = (String) jarr_fathername.get(i);
                         mohalla_array[i] = (String) jarr_mohalla.get(i);
                         phone_array[i] = (String) jarr_phone.get(i);
-                        city_array[i] = "Vadodara";
+                        city_array[i] = (String) jarr_city.get(i);
 
                         Log.d("Inside StringArray", i + "");
                     }
@@ -323,11 +324,14 @@ class CustomListAdapter extends ArrayAdapter<String> {
         TextView t_mohalla = (TextView) rowView.findViewById(R.id.lvmohalla);
         //TextView t_city=rowView.findViewById(R.id.lvcity);
         TextView t_phone = (TextView) rowView.findViewById(R.id.lvphone);
+        TextView t_city= (TextView) rowView.findViewById(R.id.lvcity);
 
         t_name.setText(name[position]);
         t_fathername.setText(fathername[position]);
         t_mohalla.setText(mohalla[position]);
         t_phone.setText(phone[position]);
+        t_city.setText(city[position]);
+
 
         return rowView;
     }

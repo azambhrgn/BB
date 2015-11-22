@@ -27,8 +27,10 @@
     <string name="city_prompt">City</string>
 
     <string-array name="city_arrays">
+        <item>Bhargain</item>
         <item>Vadodara</item>
-
+        <item>Ahmedabad</item>
+        <item>Surat</item>
     </string-array>
 
 </resources>

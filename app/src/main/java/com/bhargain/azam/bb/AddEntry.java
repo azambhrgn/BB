@@ -34,7 +34,7 @@ public class AddEntry extends ActionBarActivity {
 
     private Button btncancel, btnsave;
     private EditText etname, etfathername, etmohalla, etphone;
-    private Spinner spnbldgrp, spnantigen;
+    private Spinner spnbldgrp, spnantigen,spnrcity;
     private String status,name,fathername,mohalla,city,phone,bldgrp,antigen,insertedby;
 
     ProgressBar pb;
@@ -71,6 +71,7 @@ public class AddEntry extends ActionBarActivity {
                 etphone = (EditText) findViewById(R.id.etphone);
                 spnbldgrp = (Spinner) findViewById(R.id.spnbld);
                 spnantigen = (Spinner) findViewById(R.id.spnantigen);
+                spnrcity= (Spinner) findViewById(R.id.spnrcity);
 
 
                 //Toast.makeText(v.getContext(),phone+"",Toast.LENGTH_LONG).show();
@@ -79,7 +80,7 @@ public class AddEntry extends ActionBarActivity {
                 name = etname.getText().toString();
                 fathername = etfathername.getText().toString();
                 mohalla = etmohalla.getText().toString();
-                city = "Vadodara";
+                city = spnrcity.getSelectedItem().toString();
                 phone = etphone.getText().toString();
                 bldgrp = spnbldgrp.getSelectedItem().toString();
                 antigen = spnantigen.getSelectedItem().toString();
